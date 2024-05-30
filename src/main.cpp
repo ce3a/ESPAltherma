@@ -214,7 +214,8 @@ void setupEthernet()
     Serial.printf("Connected. IP Address: %s\n", ETH.localIP().toString().c_str());
   }
 }
-#endif
+
+#else // WT32_ETH01
 
 void setupWifi()
 {
@@ -264,6 +265,8 @@ void setupWifi()
   checkWifi();
   Serial.printf("Connected. IP Address: %s\n", WiFi.localIP().toString().c_str());
 }
+
+#endif // WT32_ETH01
 
 void initRegistries(){
     //getting the list of registries to query from the selected values
